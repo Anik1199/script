@@ -23,7 +23,7 @@ home=/android/personal/anik/slim
 cd $home
 
 # Sync Repo
-repo sync -j64 -f--force-sync
+repo sync -j64 --force-sync
 
 # ccache
 export USE_CCACHE=1
