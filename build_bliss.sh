@@ -43,3 +43,12 @@ make bacon -j8
 BUILD_END=$(date +"%s")
 DIFF=$(($BUILD_END - $BUILD_START))
 echo -e "$White Build completed in $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) seconds.$nocol"
+
+# Upload
+cd $home/out/target/product/$device
+zip=`ls *.zip | grep 'BlissPop'`
+USER=afhftpuser
+PASS=afh ftp pass
+HOST=uploads.androidfilehost.com
+curl --ftp-pasv $zip ftp://$USER:$PASS@$HOST
+echo $zip uploaded to $HOST!
