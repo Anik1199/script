@@ -1,0 +1,8 @@
+Build script for BlazingPhoenix-Server
+Run these commands
+```
+git clone git://github.com/Anik1199/script.git
+
+source script/build_bliss.sh
+```
+Enjoy!
