@@ -22,9 +22,6 @@ BUILD_START=$(date +"%s")
 home=/android/personal/anik/bliss
 cd $home
 
-# Sync Repo
-repo sync -j64 --force-sync
-
 # ccache
 export USE_CCACHE=1
 export CCACHE_DIR=/android/.ccache
