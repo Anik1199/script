@@ -16,8 +16,6 @@ nocol='\033[0m'         # Default
 
 echo -e "${LIGHTGRAY}";figlet "SlimLP";
 
-BUILD_START=$(date +"%s")
-
 # Roms dir
 home=/android/personal/anik/slim
 cd $home
@@ -38,8 +36,3 @@ make clean && make clobber
 . build/envsetup.sh
 lunch slim_$device-userdebug
 make bacon -j8
-
-# Finalizing
-BUILD_END=$(date +"%s")
-DIFF=$(($BUILD_END - $BUILD_START))
-echo -e "$White Build completed in $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) seconds.$nocol"

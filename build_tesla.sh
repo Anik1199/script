@@ -16,8 +16,6 @@ nocol='\033[0m'         # Default
 
 echo -e "${LIGHTGRAY}";figlet "Tesla-Redux";
 
-BUILD_START=$(date +"%s")
-
 # Roms dir
 home=/android/personal/anik/tesla
 cd $home
@@ -37,9 +35,4 @@ make clean && make clobber
 # Build commands
 . build/envsetup.sh
 lunch tesla_$device-userdebug
-make bacon -j8
-
-# Finalizing
-BUILD_END=$(date +"%s")
-DIFF=$(($BUILD_END - $BUILD_START))
-echo -e "$White Build completed in $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) seconds.$nocol"
+make tesla -j8
